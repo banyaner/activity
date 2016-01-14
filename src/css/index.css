@@ -1,0 +1,128 @@
+/**
+ * Created by zhongjx on 01/12/2016.
+ */
+
+html, body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    /*font-size: 14px;*/
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper-container,
+.first {
+    width: 100%;
+    height: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: url("../img/bg-first.png");
+}
+
+.first-title {
+    padding-top: 74px;
+}
+
+.people {
+    margin-top: 19px;
+    animation: pop 1.2s infinite;
+}
+
+.first-btn {
+    text-align: center;
+    position: relative;
+    top: -70px;
+}
+
+.next-btn {
+    position: fixed;
+    bottom: 135px;
+    left: 309px;
+    -webkit-animation: down 1s infinite;
+    -o-animation: down 1s infinite;
+    animation: down 1s infinite;
+}
+
+.question-title {
+    height: 175px;
+    color: white;
+    font-size: 35px;
+    padding-top: 155px;
+    padding-left: 95px;
+    padding-right: 90px;
+
+}
+.question-numb{
+    position: fixed;
+    left: 34px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    text-shadow: 3px 0px 0px #41a6e0, -3px 0px 0px #41a6e0, 0px 3px 0px #41a6e0, 0px -3px 0px #41a6e0;;
+    background: url("../img/circle.png");
+}
+.question-title p{
+    margin: 5px;
+}
+
+ul li {
+    height: 110px;
+    padding-left: 160px;
+    line-height: 110px;
+    font-size: 34px;
+    background: url("../img/ans.png");
+    margin-bottom: 45px;
+}
+.ans-right{
+    background: url("../img/rightAns.png");
+}
+.ans-wrong{
+    background: url("../img/wrongAns.png");
+}
+/*jump*/
+@keyframes down {
+    0%,
+    50%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    25%,
+    75% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+}
+/*text-shadow*/
+.common-text-stroke {
+    text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000;
+}
+/* Pop */
+@-webkit-keyframes pop {
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+}
+@keyframes pop {
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+}
