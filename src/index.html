@@ -25,6 +25,7 @@
     <script src="js/lib/zepto.js"></script>
     <script src="js/lib/qrcode.js"></script>
     <script src="js/lib/swiper.min.js"></script>
+    <script src="js/lib/template.js"></script>
     <script src="js/lib/pace.js"></script>
     <script src="js/lib/NewsAppClient.js"></script>
     <script src="js/common.js"></script>
@@ -52,7 +53,7 @@
         <div id="__newsapp_sharewxurl"></div>
     </div>
 </div>
-<div class="container">
+<div class="common-container">
     <div class="first">
         <div class="first-title">
             <img src="img/first-title.png" alt="放学别走！小学生向你约战"/>
@@ -66,17 +67,26 @@
     <!-- Swiper -->
     <div class="swiper-container">
         <div class="swiper-wrapper hide">
-            <div class="swiper-slide js-0"></div>
-            <div class="swiper-slide js-1"></div>
-            <div class="swiper-slide js-2"></div>
-            <div class="swiper-slide js-3"></div>
-            <div class="swiper-slide js-4"></div>
-            <div class="swiper-slide js-5"></div>
-            <div class="swiper-slide js-6"></div>
-            <div class="swiper-slide js-7"></div>
-            <div class="swiper-slide js-result">
-                <img class="js-share" src="img/share-btn.png" alt="分享"/>
-            </div>
+            <script id="question" type="text/html">
+                {{each list as value i}}
+                <div class="swiper-slide">
+                        <div class="question-title"> <span class="question-numb">{{i+1}}</span>
+                            <p class="common-text-stroke">{{value.question}}</p>
+                        </div>
+                        <div class="question-item">
+                            <ul data-answer={{value.R}}>
+                                <li><span>A.</span>{{value.A}}</li>
+                                <li><span>B.</span>{{value.B}}</li>
+                                <li><span>C.</span>{{value.C}}</li>
+                                <li><span>D.</span>{{value.D}}</li>
+                            </ul>
+                        </div>
+                </div>
+                {{/each}}
+                <div class="swiper-slide">
+                    <img id="share" src="img/share-btn.png" alt="分享"/>
+                </div>
+            </script>
         </div>
         <!--js插入下拉按钮-->
     </div>

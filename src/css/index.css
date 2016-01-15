@@ -5,13 +5,11 @@
 html, body {
     position: relative;
     height: 100%;
+    background: url("../img/bg.png");
 }
 
 body {
-    background: #eee;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    /*font-size: 14px;*/
-    color: #000;
     margin: 0;
     padding: 0;
 }
@@ -33,11 +31,11 @@ body {
 }
 
 .first-title {
-    padding-top: 74px;
+    padding-top: 110px;
 }
 
 .people {
-    margin-top: 19px;
+    margin-top: 12px;
     animation: pop 1.2s infinite;
 }
 
@@ -49,7 +47,7 @@ body {
 
 .next-btn {
     position: fixed;
-    bottom: 135px;
+    bottom: 30px;
     left: 309px;
     -webkit-animation: down 1s infinite;
     -o-animation: down 1s infinite;
@@ -65,13 +63,17 @@ body {
     padding-right: 90px;
 
 }
+.question-item{
+    margin-top: 23px;
+}
 .question-numb{
+    display: block;
     position: fixed;
-    left: 34px;
-    width: 50px;
-    height: 50px;
+    left: 26px;
+    width: 53px;
+    height: 55px;
     font-size: 30px;
-    line-height: 50px;
+    line-height: 55px; 
     text-align: center;
     text-shadow: 3px 0px 0px #41a6e0, -3px 0px 0px #41a6e0, 0px 3px 0px #41a6e0, 0px -3px 0px #41a6e0;;
     background: url("../img/circle.png");
@@ -108,6 +110,9 @@ ul li {
         -webkit-transform: translateY(10px);
         transform: translateY(10px);
     }
+}
+.common-container{
+    background: url("../img/bg-first.png");
 }
 /*text-shadow*/
 .common-text-stroke {
