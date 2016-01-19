@@ -59,7 +59,6 @@
             <img src="img/first-title.png" alt="放学别走！小学生向你约战"/>
         </div>
         <img class="people" src="img/first-people.png" alt=""/>
-
         <div class="first-btn">
             <img id="js-btn" src="img/first-btn.png" alt="八道题让你开始怀疑人生"/>
         </div>
@@ -68,17 +67,17 @@
     <div class="swiper-container">
         <div class="swiper-wrapper hide">
             <script id="question" type="text/html">
-                {{each list as value i}}
+                {{each list}}
                 <div class="swiper-slide">
-                        <div class="question-title"> <span class="question-numb">{{i+1}}</span>
-                            <p class="common-text-stroke">{{value.question}}</p>
+                        <div class="question-title"> <span class="question-numb">{{$index+1}}</span>
+                            <p class="common-text-stroke">{{$value.question}}</p>
                         </div>
                         <div class="question-item">
-                            <ul data-answer={{value.R}}>
-                                <li><span>A.</span>{{value.A}}</li>
-                                <li><span>B.</span>{{value.B}}</li>
-                                <li><span>C.</span>{{value.C}}</li>
-                                <li><span>D.</span>{{value.D}}</li>
+                            <ul data-answer={{$value.R}}>
+                                <li><span>A.</span>{{$value.A}}</li>
+                                <li><span>B.</span>{{$value.B}}</li>
+                                <li><span>C.</span>{{$value.C}}</li>
+                                <li><span>D.</span>{{$value.D}}</li>
                             </ul>
                         </div>
                 </div>
