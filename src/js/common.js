@@ -29,6 +29,7 @@
         var handler = function () {
             switch (window.orientation) {
                 case 0:
+                    0
                 case 180:
                     $commonLandscape.hide();
                     break;
@@ -97,8 +98,8 @@
 
         //初始化分享数据
         NewsAppShare.update({
-            title: '分享标题',
-            desc: '分享描述',
+            title: '放学别走！小学生向你约战',
+            desc: '放学别走！小学生向你约战',
             img_url: NewsAppShare.getAbsPath('img/share-icon.png'),
             link: NewsAppShare.getAbsPath()
         });
@@ -107,10 +108,12 @@
         document.addEventListener('WeixinJSBridgeReady', function () {
             WeixinJSBridge.on('menu:share:timeline', function () {
                 WeixinJSBridge.invoke('shareTimeline', NewsAppShare.shareData, function () {
+                    location.href = "ttp://c.3g.163.com/nc/qa/newsapp/question.html?id=EX2775326325204378143&token=e735+qViTpXwgsNyAxtY3wJL/8FmwEthFxqR4Za5U1Z48ErR02zJ6/KXOnxX046I";
                 });
             });
             WeixinJSBridge.on('menu:share:appmessage', function () {
                 WeixinJSBridge.invoke('sendAppMessage', NewsAppShare.shareData, function () {
+                    location.href = "ttp://c.3g.163.com/nc/qa/newsapp/question.html?id=EX2775326325204378143&token=e735+qViTpXwgsNyAxtY3wJL/8FmwEthFxqR4Za5U1Z48ErR02zJ6/KXOnxX046I";
                 });
             });
         }, false);

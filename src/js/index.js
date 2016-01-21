@@ -10,9 +10,9 @@
         init();
     }
 
-    var arr,//存取随机抽取的八道题
+    var arr,//存取随机抽取的八道题,备用
         rightAns = 0,
-        nextHtml = '<div class="next-btn"><img src="img/next.png" alt=""/></div>',
+        swiper,
         el = {
             img1: $('<img>', {src: 'img/r1.png'}),
             img2: $('<img>', {src: 'img/r3.png'}),
@@ -33,7 +33,7 @@
             case 2:
                 $jsShare.before(el.img4);
                 NewsAppShare.update({
-                    title: 's'
+                    title: '放学别走！小学生向你约战'
                 });
                 break;
             case 3:
@@ -63,20 +63,14 @@
     //初始化
     function init() {
         $.getJSON("data/question.json", function (data) {
-            data.sort(randomSort);
+            //data.sort(randomSort);随机排序时使用
             var obj = {list: data.slice(0, 8)};//随机抽取8题
             var questionHtml = template('question', obj);
             $('.swiper-wrapper').html(questionHtml);
-            var swiper = new Swiper('.swiper-container', {
-                direction: 'vertical',
-                onSlideNextEnd: function (swiper) {
-                    if (swiper.activeIndex == 8) {
-                        $('.next-btn').remove();
-                        showResult(rightAns);
-                        swiper.lockSwipes();
-                    }
-                }
+            swiper = new Swiper('.swiper-container', {
+                direction: 'vertical'
             });
+            swiper.lockSwipes();
             bind();
         });
     }
@@ -87,13 +81,13 @@
             $('.first').hide();
             $('.common-container').css('background', "url(img/bg1.png)");
             $('.swiper-wrapper').show();
-            $('.swiper-container').append(nextHtml);
         });
         $('ul').on('tap', 'li', function () {
             var $this = $(this),
                 $ul = $this.parent(),
                 answer = $ul.attr('data-answer'),
                 chosen = $this.find('span').text();
+            swiper.unlockSwipes();
             if (!$ul.children().hasClass('ans-right') && !$ul.children().hasClass('ans-wrong')) {
                 if (chosen.match(answer)) {
                     $this.addClass('ans-right');
@@ -102,6 +96,14 @@
                     $this.addClass('ans-wrong');
                 }
             }
+            setTimeout(function () {
+                swiper.slideNext(null, 1000);
+                swiper.lockSwipes();
+                if (swiper.activeIndex == 8) {
+                    $('.next-btn').remove();
+                    showResult(rightAns);
+                }
+            }, 650);
         });
         $('#share').on('tap', function () {
             NewsAppShare.show();
