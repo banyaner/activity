@@ -77,7 +77,10 @@
             },
             show: function () {
                 if (NewsAppClient.isNewsApp()) {
-                    NewsAppClient.share();
+                    var say = function() {
+                        location.href = "newsapp://expert/EX2775326325204378143";
+                    };
+                    NewsAppClient.share(say);
                 } else {
                     $commonShare.fadeIn(300);
                     setTimeout(function () {
@@ -99,7 +102,7 @@
         //初始化分享数据
         NewsAppShare.update({
             title: '放学别走！小学生向你约战',
-            desc: '放学别走！小学生向你约战',
+            desc: ' 八道题让你怀疑人生 ʅ(‾◡◝)ʃ',
             img_url: NewsAppShare.getAbsPath('img/share-icon.png'),
             link: NewsAppShare.getAbsPath()
         });
@@ -108,12 +111,12 @@
         document.addEventListener('WeixinJSBridgeReady', function () {
             WeixinJSBridge.on('menu:share:timeline', function () {
                 WeixinJSBridge.invoke('shareTimeline', NewsAppShare.shareData, function () {
-                    location.href = "ttp://c.3g.163.com/nc/qa/newsapp/question.html?id=EX2775326325204378143&token=e735+qViTpXwgsNyAxtY3wJL/8FmwEthFxqR4Za5U1Z48ErR02zJ6/KXOnxX046I";
+                    location.href = "http://c.3g.163.com/nc/qa/newsapp/question.html?id=EX2775326325204378143&token=e735+qViTpXwgsNyAxtY3wJL/8FmwEthFxqR4Za5U1Z48ErR02zJ6/KXOnxX046I";
                 });
             });
             WeixinJSBridge.on('menu:share:appmessage', function () {
                 WeixinJSBridge.invoke('sendAppMessage', NewsAppShare.shareData, function () {
-                    location.href = "ttp://c.3g.163.com/nc/qa/newsapp/question.html?id=EX2775326325204378143&token=e735+qViTpXwgsNyAxtY3wJL/8FmwEthFxqR4Za5U1Z48ErR02zJ6/KXOnxX046I";
+                    location.href = "http://c.3g.163.com/nc/qa/newsapp/question.html?id=EX2775326325204378143&token=e735+qViTpXwgsNyAxtY3wJL/8FmwEthFxqR4Za5U1Z48ErR02zJ6/KXOnxX046I";
                 });
             });
         }, false);
