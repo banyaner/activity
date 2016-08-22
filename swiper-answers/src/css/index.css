@@ -1,0 +1,169 @@
+/**
+ * Created by zhongjx on 01/12/2016.
+ */
+
+html, body {
+    position: relative;
+    height: 100%;
+    background: url("../img/bg.png");
+    background-size: cover;
+}
+
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper-container,
+.first {
+    width: 100%;
+    height: 100%;
+}
+
+.first {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: url("../img/bg-first.png");
+}
+
+.first-title {
+    padding-top: 110px;
+}
+
+.people {
+    margin-top: 12px;
+    animation: pop 1.2s infinite;
+    -webkit-animation: pop 1.2s infinite;
+}
+
+.first-btn {
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    width: 750px;
+    height: 110px;
+    background: url("../img/first-btn.png") no-repeat;
+}
+
+.next-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 309px;
+    animation: down 1s infinite;
+    -webkit-animation: down 1s infinite;
+}
+
+.question-title {
+    height: 175px;
+    color: white;
+    font-size: 35px;
+    padding-top: 155px;
+    padding-left: 95px;
+    padding-right: 90px;
+
+}
+.question-item{
+    margin-top: 23px;
+}
+.question-numb{
+    position: absolute;
+    left: 26px;
+    width: 53px;
+    height: 55px;
+    font-size: 30px;
+    line-height: 55px;
+    text-align: center;
+    text-shadow: 3px 0px 0px #41a6e0, -3px 0px 0px #41a6e0, 0px 3px 0px #41a6e0, 0px -3px 0px #41a6e0;;
+    background: url("../img/circle.png");
+}
+.question-title p{
+    margin: 5px;
+}
+
+ul li {
+    height: 110px;
+    padding-left: 160px;
+    line-height: 100px;
+    font-size: 34px;
+    background: url("../img/ans.png");
+    margin-bottom: 45px;
+}
+.ans-right{
+    background: url("../img/rightAns.png");
+    color: white;
+    animation: pop 0.5s infinite;
+    -webkit-animation: pop 0.5s infinite;
+}
+.ans-wrong{
+    background: url("../img/wrongAns.png");
+    color: white;
+    animation: pop 0.5s infinite;
+    -webkit-animation: pop 0.5s infinite;
+}
+/*jump*/
+@keyframes down {
+    0%,
+    50%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+    }
+
+    25%,
+    75% {
+        -webkit-transform: translateY(10px);
+        -moz-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        -o-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+}
+@-webkit-keyframes down {
+    0%,
+    50%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    25%,
+    75% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+}
+.common-container{
+    background: url("../img/bg-first.png");
+}
+/*text-shadow*/
+.common-text-stroke {
+    text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000;
+}
+/* Pop */
+@-webkit-keyframes pop {
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+}
+@keyframes pop {
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+}
