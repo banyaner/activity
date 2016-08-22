@@ -1,0 +1,97 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	position: relative;
+	font: 28px/1.2 Heiti SC, Helvetica Neue, Helvetica, sans-serif;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-overflow-scrolling: touch;
+	-webkit-text-size-adjust: 100%;
+	-webkit-user-select: none;
+}
+
+a,
+img {
+	-webkit-touch-callout: none;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/*通用容器*/
+
+.common-container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 750px;
+	height: 1206px;
+}
+
+/*动画帧*/
+
+@-webkit-keyframes common-landscape {
+	0% {
+		-webkit-transform: rotate(90deg);
+		opacity: 0;
+	}
+
+	15% {
+		-webkit-transform: rotate(90deg);
+		opacity: 1;
+	}
+
+	50% {
+		-webkit-transform: rotate(0deg);
+		opacity: 1;
+	}
+
+	85% {
+		-webkit-transform: rotate(0deg);
+		opacity: 1;
+	}
+
+	100% {
+		-webkit-transform: rotate(0deg);
+		opacity: 0;
+	}
+}
+
+@keyframes common-landscape {
+	0% {
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+		opacity: 0;
+	}
+
+	15% {
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+		opacity: 1;
+	}
+
+	50% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+
+	85% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+
+	100% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		opacity: 0;
+	}
+}
